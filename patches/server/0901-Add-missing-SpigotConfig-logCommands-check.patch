@@ -5,10 +5,10 @@ Subject: [PATCH] Add missing SpigotConfig logCommands check
 
 
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index e87e99569fe5d6d916faa385b1793db858ab39b7..5654bc0390f3c205bca3ea1f225eba1a39216005 100644
+index fc4d10b6c9e69a65e0e857e364e0c677a56af829..c68ad4337e714751e57ffc451a0cc539a69f8bc6 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -2113,7 +2113,9 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
+@@ -2116,7 +2116,9 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
      private void performChatCommand(ServerboundChatCommandPacket packet, LastSeenMessages lastSeenMessages) {
          // CraftBukkit start
          String command = "/" + packet.command();

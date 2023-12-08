@@ -5,10 +5,10 @@ Subject: [PATCH] Use single player info update packet on join
 
 
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index 5654bc0390f3c205bca3ea1f225eba1a39216005..4fae5949e1fabb387595a1e0449b0c0ec368f74e 100644
+index c68ad4337e714751e57ffc451a0cc539a69f8bc6..5455ba8ca4cfda3daed1a839373acbd8ea6843c2 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -3416,7 +3416,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
+@@ -3419,7 +3419,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
          this.signedMessageDecoder = session.createMessageDecoder(this.player.getUUID());
          this.chatMessageChain.append((executor) -> {
              this.player.setChatSession(session);

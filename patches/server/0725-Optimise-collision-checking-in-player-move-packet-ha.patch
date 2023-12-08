@@ -8,7 +8,7 @@ Move collision logic to just the hasNewCollision call instead of getCubes + hasN
 CHECK ME
 
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index 2898712d34dc5dd1f2e505746c515f773de2b0d8..5911fc7009a4bdf99f8016d440fbeb1ae9b44441 100644
+index 2898712d34dc5dd1f2e505746c515f773de2b0d8..0699237918d6374746dd92e1b474a6311724719d 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 @@ -534,7 +534,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
@@ -142,7 +142,7 @@ index 2898712d34dc5dd1f2e505746c515f773de2b0d8..5911fc7009a4bdf99f8016d440fbeb1a
                                  this.internalTeleport(d3, d4, d5, f, f1, Collections.emptySet()); // CraftBukkit - SPIGOT-1807: Don't call teleport event, when the client thinks the player is falling, because the chunks are not loaded on the client yet.
                                  this.player.doCheckFallDamage(this.player.getX() - d3, this.player.getY() - d4, this.player.getZ() - d5, packet.isOnGround());
                              } else {
-@@ -1478,6 +1525,33 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
+@@ -1478,6 +1525,36 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
          }
      }
  
@@ -150,9 +150,12 @@ index 2898712d34dc5dd1f2e505746c515f773de2b0d8..5911fc7009a4bdf99f8016d440fbeb1a
 +    private boolean hasNewCollision(final ServerLevel world, final Entity entity, final AABB oldBox, final AABB newBox) {
 +        final List<AABB> collisionsBB = new java.util.ArrayList<>();
 +        final List<VoxelShape> collisionsVoxel = new java.util.ArrayList<>();
++        int flags = io.papermc.paper.util.CollisionUtil.COLLISION_FLAG_COLLIDE_WITH_UNLOADED_CHUNKS;
++        if(!(entity instanceof net.minecraft.world.entity.player.Player))
++            flags |= io.papermc.paper.util.CollisionUtil.COLLISION_FLAG_CHECK_BORDER;
 +        io.papermc.paper.util.CollisionUtil.getCollisions(
 +            world, entity, newBox, collisionsVoxel, collisionsBB,
-+            io.papermc.paper.util.CollisionUtil.COLLISION_FLAG_COLLIDE_WITH_UNLOADED_CHUNKS | io.papermc.paper.util.CollisionUtil.COLLISION_FLAG_CHECK_BORDER,
++            flags,
 +            null, null
 +        );
 +

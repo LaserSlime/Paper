@@ -85,10 +85,10 @@ index d088479d160dbd2fc90b48a30553be141db8eef2..ccb7d92b6c36b6225a2e640f8cea6c0d
      public static class DataItem<T> {
  
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index 372015adb4f198c131d1a5f239e75f862ab5fdd7..d63451592c34429c1c827ff8e16989347e2efdaa 100644
+index 1bb12a26cf8653048d42b40915ad47091fc881bc..e0cb0af0f42140b55caa35ee3082a6bd9e8089a6 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -2649,7 +2649,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
+@@ -2652,7 +2652,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
  
                              // Entity in bucket - SPIGOT-4048 and SPIGOT-6859a
                              if ((entity instanceof Bucketable && entity instanceof LivingEntity && origItem != null && origItem.asItem() == Items.WATER_BUCKET) && (event.isCancelled() || ServerGamePacketListenerImpl.this.player.getInventory().getSelected() == null || ServerGamePacketListenerImpl.this.player.getInventory().getSelected().getItem() != origItem)) {

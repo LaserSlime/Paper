@@ -40,10 +40,10 @@ index ebcd2bbcf8f25c52de3deaff32a8522dbf662141..8189c549edd14a351fc5e75be23da737
  
          while (iterator.hasNext()) {
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index d63451592c34429c1c827ff8e16989347e2efdaa..e87e99569fe5d6d916faa385b1793db858ab39b7 100644
+index e0cb0af0f42140b55caa35ee3082a6bd9e8089a6..fc4d10b6c9e69a65e0e857e364e0c677a56af829 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -3386,7 +3386,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
+@@ -3389,7 +3389,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
  
                      this.resetPlayerChatState(remotechatsession_a.validate(this.player.getGameProfile(), signaturevalidator));
                  } catch (ProfilePublicKey.ValidationException profilepublickey_b) {

@@ -6,10 +6,10 @@ Subject: [PATCH] Add some minimal debug information to chat packet errors
 TODO: potentially add some kick leeway
 
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index ac87735ff07ee0833727cdf8b62f443ce16a3216..c518f78af7612f59af7f02fcf2ba5ef274f9694d 100644
+index 07cdf77a0f045547287a354c364655a2a5a5c682..b9e5367c1608587e7f3362396b160ad979e3a025 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -2149,7 +2149,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
+@@ -2152,7 +2152,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
  
      private Optional<LastSeenMessages> tryHandleChat(String message, Instant timestamp, LastSeenMessages.Update acknowledgment) {
          if (!this.updateChatOrder(timestamp)) {

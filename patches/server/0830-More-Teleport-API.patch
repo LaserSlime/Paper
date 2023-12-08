@@ -5,10 +5,10 @@ Subject: [PATCH] More Teleport API
 
 
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index 10bb9364b6ebdd21c4a3602af5c3887871dc0548..ffc6b7e7349ea1088b9ed5e13686d7bd9483aa1c 100644
+index 1dc3fd6131054368baeab7d2cf4466058cc9eb36..0c61c242169505d5db9d5c02b28386cb8551b760 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -1606,11 +1606,17 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
+@@ -1609,11 +1609,17 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
              return false; // CraftBukkit - Return event status
          }
  

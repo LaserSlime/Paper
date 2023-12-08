@@ -5,10 +5,10 @@ Subject: [PATCH] Fix Spigot Config not using commands.spam-exclusions
 
 
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index c518f78af7612f59af7f02fcf2ba5ef274f9694d..10bb9364b6ebdd21c4a3602af5c3887871dc0548 100644
+index b9e5367c1608587e7f3362396b160ad979e3a025..1dc3fd6131054368baeab7d2cf4466058cc9eb36 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -2369,7 +2369,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
+@@ -2372,7 +2372,7 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
          }
          // Spigot end
          // this.chatSpamTickCount += 20;

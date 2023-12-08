@@ -7,7 +7,7 @@ Minecraft's prediction system does not handle block entities, so if we are manua
 block breaking we need to set it after the prediction is finished. This fixes block entities not showing when cancelling the BlockBreakEvent.
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerPlayerGameMode.java b/src/main/java/net/minecraft/server/level/ServerPlayerGameMode.java
-index 3fe747fdc4500bd65029446f63e314031d71ed4a..19573bfb05d7f9641964c76e6670e4a7658a1bbd 100644
+index 6cd4e043de742bd9c84dd6408dc80598aedaa3a4..b965df96bd92c0e3ab20f46f5a3712fcb0fb9fce 100644
 --- a/src/main/java/net/minecraft/server/level/ServerPlayerGameMode.java
 +++ b/src/main/java/net/minecraft/server/level/ServerPlayerGameMode.java
 @@ -62,6 +62,8 @@ public class ServerPlayerGameMode {
@@ -57,10 +57,10 @@ index 3fe747fdc4500bd65029446f63e314031d71ed4a..19573bfb05d7f9641964c76e6670e4a7
              }
          }
 diff --git a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-index ffc6b7e7349ea1088b9ed5e13686d7bd9483aa1c..372015adb4f198c131d1a5f239e75f862ab5fdd7 100644
+index 0c61c242169505d5db9d5c02b28386cb8551b760..1bb12a26cf8653048d42b40915ad47091fc881bc 100644
 --- a/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
 +++ b/src/main/java/net/minecraft/server/network/ServerGamePacketListenerImpl.java
-@@ -1752,8 +1752,28 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
+@@ -1755,8 +1755,28 @@ public class ServerGamePacketListenerImpl extends ServerCommonPacketListenerImpl
                      return;
                  }
                  // Paper end - Don't allow digging in unloaded chunks
